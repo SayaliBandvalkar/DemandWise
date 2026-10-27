@@ -1,0 +1,5 @@
+Method,Is_Coherent,Max_Coherence_Error,Mean_Coherence_Error,Total_Series_MAE,Avg_Bottom_MAE,Total_WAPE_Pct
+unreconciled,False,112.93666,2.49128,122.27,9.69,15.5
+bottom_up,True,0.0,0.0,116.98,9.69,14.83
+top_down,True,0.0,0.0,122.27,9.05,15.5
+mint_shrink,False,3.84615,0.01454,123.54,9.84,15.66

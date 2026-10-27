@@ -1,0 +1,4 @@
+Policy,Total Demand,Fulfilled Units,Lost Sales,Fill Rate (%),Stockout Days,Orders Placed,Holding Cost ($),Stockout Cost ($),Ordering Cost ($),Total Cost ($)
+baseline,454.0,454.0,0.0,100.0,0,2,21.55,0.0,30.0,51.55
+forecast_driven,454.0,355.4,98.6,78.29,3,1,12.48,1232.14,15.0,1259.63
+uncertainty_aware,454.0,355.4,98.6,78.29,3,1,10.72,1232.14,15.0,1257.86

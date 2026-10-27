@@ -1,0 +1,213 @@
+{
+  "timestamp": "2026-10-26T16:58:45.178736",
+  "runtime_seconds": 11.35,
+  "dataset": {
+    "path": "data/sample/retail_hierarchy.csv",
+    "total_series": 59,
+    "bottom_series": 48,
+    "horizon": 14,
+    "train_days": 337,
+    "test_days": 14
+  },
+  "models_benchmark": [
+    {
+      "Model": "Naive",
+      "Total_MAE": 149.71,
+      "Total_RMSE": 165.06,
+      "Total_MASE": 1.206,
+      "Total_WAPE_Pct": 18.98,
+      "Avg_Bottom_MAE": 11.07,
+      "Runtime_Sec": 0.017
+    },
+    {
+      "Model": "SeasonalNaive",
+      "Total_MAE": 122.14,
+      "Total_RMSE": 146.8,
+      "Total_MASE": 0.984,
+      "Total_WAPE_Pct": 15.48,
+      "Avg_Bottom_MAE": 9.67,
+      "Runtime_Sec": 0.006
+    },
+    {
+      "Model": "Croston_SBA",
+      "Total_MAE": 94.06,
+      "Total_RMSE": 127.27,
+      "Total_MASE": 0.758,
+      "Total_WAPE_Pct": 11.92,
+      "Avg_Bottom_MAE": 8.93,
+      "Runtime_Sec": 0.048
+    },
+    {
+      "Model": "ExponentialSmoothing",
+      "Total_MAE": 90.54,
+      "Total_RMSE": 129.02,
+      "Total_MASE": 0.729,
+      "Total_WAPE_Pct": 11.48,
+      "Avg_Bottom_MAE": 8.24,
+      "Runtime_Sec": 7.658
+    },
+    {
+      "Model": "LightGBM",
+      "Total_MAE": 122.27,
+      "Total_RMSE": 139.05,
+      "Total_MASE": 0.985,
+      "Total_WAPE_Pct": 15.5,
+      "Avg_Bottom_MAE": 9.69,
+      "Runtime_Sec": 2.929
+    }
+  ],
+  "reconciliation_benchmark": [
+    {
+      "Method": "unreconciled",
+      "Is_Coherent": false,
+      "Max_Coherence_Error": 112.93666,
+      "Mean_Coherence_Error": 2.49128,
+      "Total_Series_MAE": 122.27,
+      "Avg_Bottom_MAE": 9.69,
+      "Total_WAPE_Pct": 15.5
+    },
+    {
+      "Method": "bottom_up",
+      "Is_Coherent": true,
+      "Max_Coherence_Error": 0.0,
+      "Mean_Coherence_Error": 0.0,
+      "Total_Series_MAE": 116.98,
+      "Avg_Bottom_MAE": 9.69,
+      "Total_WAPE_Pct": 14.83
+    },
+    {
+      "Method": "top_down",
+      "Is_Coherent": true,
+      "Max_Coherence_Error": 0.0,
+      "Mean_Coherence_Error": 0.0,
+      "Total_Series_MAE": 122.27,
+      "Avg_Bottom_MAE": 9.05,
+      "Total_WAPE_Pct": 15.5
+    },
+    {
+      "Method": "mint_shrink",
+      "Is_Coherent": false,
+      "Max_Coherence_Error": 3.84615,
+      "Mean_Coherence_Error": 0.01454,
+      "Total_Series_MAE": 123.54,
+      "Avg_Bottom_MAE": 9.84,
+      "Total_WAPE_Pct": 15.66
+    }
+  ],
+  "calibration_summary": [
+    {
+      "Method": "bootstrap",
+      "Nominal_Level": 0.8,
+      "Empirical_Coverage": 0.2987,
+      "Coverage_Error": -0.5013,
+      "Mean_Width": 26.8055,
+      "Winkler_Score": 150.3144
+    },
+    {
+      "Method": "bootstrap",
+      "Nominal_Level": 0.95,
+      "Empirical_Coverage": 0.6169,
+      "Coverage_Error": -0.3331,
+      "Mean_Width": 44.3362,
+      "Winkler_Score": 368.3903
+    },
+    {
+      "Method": "conformal",
+      "Nominal_Level": 0.8,
+      "Empirical_Coverage": 0.7532,
+      "Coverage_Error": -0.0468,
+      "Mean_Width": 73.7597,
+      "Winkler_Score": 118.4095
+    },
+    {
+      "Method": "conformal",
+      "Nominal_Level": 0.95,
+      "Empirical_Coverage": 0.9545,
+      "Coverage_Error": 0.0045,
+      "Mean_Width": 131.5117,
+      "Winkler_Score": 236.7371
+    }
+  ],
+  "inventory_benchmark": [
+    {
+      "Policy": "baseline",
+      "Total Demand": 664.0,
+      "Fulfilled Units": 475.4,
+      "Lost Sales": 188.6,
+      "Fill Rate (%)": 71.6,
+      "Stockout Days": 6,
+      "Orders Placed": 1,
+      "Holding Cost ($)": 14.19,
+      "Stockout Cost ($)": 2357.14,
+      "Ordering Cost ($)": 15.0,
+      "Total Cost ($)": 2386.33
+    },
+    {
+      "Policy": "forecast_driven",
+      "Total Demand": 664.0,
+      "Fulfilled Units": 475.4,
+      "Lost Sales": 188.6,
+      "Fill Rate (%)": 71.6,
+      "Stockout Days": 6,
+      "Orders Placed": 1,
+      "Holding Cost ($)": 14.0,
+      "Stockout Cost ($)": 2357.14,
+      "Ordering Cost ($)": 15.0,
+      "Total Cost ($)": 2386.15
+    },
+    {
+      "Policy": "uncertainty_aware",
+      "Total Demand": 664.0,
+      "Fulfilled Units": 475.4,
+      "Lost Sales": 188.6,
+      "Fill Rate (%)": 71.6,
+      "Stockout Days": 6,
+      "Orders Placed": 1,
+      "Holding Cost ($)": 12.7,
+      "Stockout Cost ($)": 2357.14,
+      "Ordering Cost ($)": 15.0,
+      "Total Cost ($)": 2384.84
+    }
+  ],
+  "ablation_stress_test": [
+    {
+      "Policy": "baseline",
+      "Total Demand": 454.0,
+      "Fulfilled Units": 454.0,
+      "Lost Sales": 0.0,
+      "Fill Rate (%)": 100.0,
+      "Stockout Days": 0,
+      "Orders Placed": 2,
+      "Holding Cost ($)": 21.55,
+      "Stockout Cost ($)": 0.0,
+      "Ordering Cost ($)": 30.0,
+      "Total Cost ($)": 51.55
+    },
+    {
+      "Policy": "forecast_driven",
+      "Total Demand": 454.0,
+      "Fulfilled Units": 355.4,
+      "Lost Sales": 98.6,
+      "Fill Rate (%)": 78.29,
+      "Stockout Days": 3,
+      "Orders Placed": 1,
+      "Holding Cost ($)": 12.48,
+      "Stockout Cost ($)": 1232.14,
+      "Ordering Cost ($)": 15.0,
+      "Total Cost ($)": 1259.63
+    },
+    {
+      "Policy": "uncertainty_aware",
+      "Total Demand": 454.0,
+      "Fulfilled Units": 355.4,
+      "Lost Sales": 98.6,
+      "Fill Rate (%)": 78.29,
+      "Stockout Days": 3,
+      "Orders Placed": 1,
+      "Holding Cost ($)": 10.72,
+      "Stockout Cost ($)": 1232.14,
+      "Ordering Cost ($)": 15.0,
+      "Total Cost ($)": 1257.86
+    }
+  ]
+}

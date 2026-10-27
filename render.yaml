@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: demandwise-platform
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: free
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: SERVE_FRONTEND
+        value: true
+      - key: DEBUG
+        value: false

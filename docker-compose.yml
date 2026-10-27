@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  demandwise:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: demandwise-app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - SERVE_FRONTEND=true
+      - DEBUG=false
+      - CORS_ORIGINS=http://localhost:8000,http://127.0.0.1:8000
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

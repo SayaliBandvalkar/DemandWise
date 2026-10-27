@@ -1,0 +1,6 @@
+Model,Total_MAE,Total_RMSE,Total_MASE,Total_WAPE_Pct,Avg_Bottom_MAE,Runtime_Sec
+Naive,149.71,165.06,1.206,18.98,11.07,0.017
+SeasonalNaive,122.14,146.8,0.984,15.48,9.67,0.006
+Croston_SBA,94.06,127.27,0.758,11.92,8.93,0.048
+ExponentialSmoothing,90.54,129.02,0.729,11.48,8.24,7.658
+LightGBM,122.27,139.05,0.985,15.5,9.69,2.929
