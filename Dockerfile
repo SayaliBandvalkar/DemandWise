@@ -27,9 +27,10 @@ ENV PYTHONUNBUFFERED=1 \
     DEBUG=false \
     PYTHONPATH="/app:/app/src"
 
-# Install runtime utilities
+# Install runtime utilities and OpenMP library for LightGBM
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
+    libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies

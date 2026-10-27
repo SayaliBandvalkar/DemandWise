@@ -21,7 +21,7 @@ from sklearn.linear_model import Ridge
 try:
     import lightgbm as lgb
     HAS_LIGHTGBM = True
-except ImportError:
+except (ImportError, OSError):
     HAS_LIGHTGBM = False
 
 
