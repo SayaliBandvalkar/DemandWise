@@ -38,14 +38,21 @@ export const ModelEvaluation: React.FC = () => {
     <div className="p-8 space-y-8 max-w-7xl mx-auto">
       {/* Header Banner */}
       <div className="glass-panel p-6 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div>
-          <h2 className="text-lg font-bold text-white flex items-center space-x-2">
-            <Award className="w-5 h-5 text-cyan" />
-            <span>Master Model Evaluation & Accuracy Leaderboard</span>
-          </h2>
-          <p className="text-xs text-slate-400 mt-1">
-            Empirical benchmarking of baseline, intermittent, statistical, and gradient-boosted time series architectures across all 59 hierarchy series.
-          </p>
+        <div className="flex items-start space-x-4">
+          <img
+            src="/logo.png"
+            alt="DemandWise Logo"
+            className="h-9 w-auto object-contain shrink-0 hidden sm:block mt-0.5 select-none"
+          />
+          <div>
+            <h2 className="text-lg font-bold text-white flex items-center space-x-2">
+              <Award className="w-5 h-5 text-cyan" />
+              <span>Master Model Evaluation & Accuracy Leaderboard</span>
+            </h2>
+            <p className="text-xs text-slate-400 mt-1">
+              Empirical benchmarking of baseline, intermittent, statistical, and gradient-boosted time series architectures across all 59 hierarchy series.
+            </p>
+          </div>
         </div>
 
         <div className="flex items-center space-x-2 text-xs font-mono text-cyan bg-cyan/10 px-3 py-1.5 rounded-xl border border-cyan/20">
