@@ -24,7 +24,8 @@ ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PORT=8000 \
     SERVE_FRONTEND=true \
-    DEBUG=false
+    DEBUG=false \
+    PYTHONPATH="/app:/app/src"
 
 # Install runtime utilities
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -35,15 +36,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY pyproject.toml ./
-RUN pip install --no-cache-dir -e . --no-deps
-
-# Copy backend, models, datasets and configs
+# Copy project configuration, documentation, source code, backend, and data
+COPY README.md pyproject.toml ./
 COPY src/ ./src/
 COPY backend/ ./backend/
 COPY data/ ./data/
 COPY configs/ ./configs/
 COPY artifacts/ ./artifacts/
+
+# Install project package now that src/ and README.md are present
+RUN pip install --no-cache-dir -e . --no-deps
 
 # Copy built frontend distribution from Stage 1
 COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
